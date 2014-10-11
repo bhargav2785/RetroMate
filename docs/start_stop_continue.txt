@@ -1,0 +1,41 @@
+tables (add prefix for multiple installation on the same database)
+	tables will be created with a installation script
+====================================================================
+users
+	id, int
+	email, string
+	pasword, string
+	group_id, int, default 'other'
+	fname, string
+	lname, string
+	is_active, bool
+	role_id, int
+	created_date, datetime, default 'CURRENT_TIMESTAMP'
+user_roles
+	id
+	role, enum[viewer, admin, creator], default 'viewer'
+	created_date, datetime, default 'CURRENT_TIMESTAMP'	
+groups (create default entry with name 'other')
+	id
+	name
+	created_date, datetime, default 'CURRENT_TIMESTAMP'
+user_group
+	id
+	user_id
+	group_id
+	created_date, datetime, default 'CURRENT_TIMESTAMP'
+posts
+	id
+	action_id, int[&actions], not null
+	created_by, int[&users], not null
+	group_id, int, not null
+	is_private, bool
+	created_date, datetime, default 'CURRENT_TIMESTAMP'
+post_group
+	id
+	post_id
+	group_id
+	created_date, datetime, default 'CURRENT_TIMESTAMP'	
+actions [start,stop,continue]
+	id
+	created_date, datetime, default 'CURRENT_TIMESTAMP'
