@@ -1,0 +1,16 @@
+{
+	"name": "bhargav2785/RetroMate",
+	"description": "A simple project management tool.",
+	"minimum-stability": "stable",
+	"license": "WTF License",
+	"authors": [
+		{
+			"name": "Bhargav Vadher",
+			"email": "bhargav@bhargavvadher.com"
+		}
+	],
+	"require": {
+		"slim/slim": "2.*",
+		"phpunit/phpunit": "4.3.*"
+	}
+}
